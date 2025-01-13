@@ -1,7 +1,0 @@
-090d0f1ba91d5c34f6f45db4a17e3d0b
-
-1e959de670cfe6c74142bccdf3543257
-
-npm run build
-
-npm start
