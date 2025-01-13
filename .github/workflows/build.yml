@@ -28,7 +28,7 @@ jobs:
       - name: Create Windows Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref_name }}-windows
+          tag_name: release-${{ github.ref_name }}-windows
           name: Release ${{ github.ref_name }} for Windows
           files: dist/*.exe
           token: ${{ secrets.GH_TOKEN }}
@@ -55,7 +55,7 @@ jobs:
       - name: Create macOS Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref_name }}-macos
+          tag_name: release-${{ github.ref_name }}-macos
           name: Release ${{ github.ref_name }} for macOS
           files: dist/*.dmg
           token: ${{ secrets.GH_TOKEN }}
@@ -82,7 +82,7 @@ jobs:
       - name: Create Linux Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref_name }}-linux
+          tag_name: release-${{ github.ref_name }}-linux
           name: Release ${{ github.ref_name }} for Linux
           files: dist/*.deb
           token: ${{ secrets.GH_TOKEN }}
