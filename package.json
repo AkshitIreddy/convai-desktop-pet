@@ -31,6 +31,18 @@
         "nsis"
       ],
       "icon": "build/icons/win/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "build/icons/mac/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "icon": "build/icons/linux/icon.png"
     }
   }
 }
