@@ -1,0 +1,36 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "convai-web-sdk": "^0.1.4",
+    "electron-store": "^10.0.0"
+  },
+  "build": {
+    "appId": "com.your.app",
+    "productName": "Convai Desktop Pet",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icons/win/icon.ico"
+    }
+  }
+}
