@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Your Name <your.email@example.com>",
   "license": "ISC",
   "devDependencies": {
     "electron": "^33.2.1",
@@ -43,6 +43,11 @@
         "deb"
       ],
       "icon": "build/icon.png"
-    }
+    },
+    "files": [
+      "dist/*.exe",
+      "dist/*.dmg",
+      "dist/*.deb"
+    ]
   }
 }
