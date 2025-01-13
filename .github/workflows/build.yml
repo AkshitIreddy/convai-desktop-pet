@@ -1,85 +1,85 @@
-   name: Build and Release
+name: Build and Release
 
-   on:
-     push:
-       tags:
-         - 'v*'  # Triggers on version tags
+on:
+  push:
+    tags:
+      - 'v*'  # Triggers on version tags
 
-   jobs:
-     build-windows:
-       runs-on: windows-latest
+jobs:
+  build-windows:
+    runs-on: windows-latest
 
-       steps:
-         - name: Checkout code
-           uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-         - name: Set up Node.js
-           uses: actions/setup-node@v2
-           with:
-             node-version: '20.11.1'  # Update to your Node.js version
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.11.1'  # Update to your Node.js version
 
-         - name: Install dependencies
-           run: npm install
+      - name: Install dependencies
+        run: npm install
 
-         - name: Build the app
-           run: npm run build
+      - name: Build the app
+        run: npm run build
 
-         - name: Create Windows Release
-           uses: softprops/action-gh-release@v1
-           with:
-             tag_name: ${{ github.ref }}
-             files: dist/**/*  # Adjust this if your output path is different
-           env:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Windows Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          files: dist/**/*  # Adjust this if your output path is different
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-     build-macos:
-       runs-on: macos-latest
+  build-macos:
+    runs-on: macos-latest
 
-       steps:
-         - name: Checkout code
-           uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-         - name: Set up Node.js
-           uses: actions/setup-node@v2
-           with:
-             node-version: '20.11.1'  # Update to your Node.js version
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.11.1'  # Update to your Node.js version
 
-         - name: Install dependencies
-           run: npm install
+      - name: Install dependencies
+        run: npm install
 
-         - name: Build the app
-           run: npm run build
+      - name: Build the app
+        run: npm run build
 
-         - name: Create macOS Release
-           uses: softprops/action-gh-release@v1
-           with:
-             tag_name: ${{ github.ref }}
-             files: dist/**/*  # Adjust this if your output path is different
-           env:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create macOS Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          files: dist/**/*  # Adjust this if your output path is different
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-     build-linux:
-       runs-on: ubuntu-latest
+  build-linux:
+    runs-on: ubuntu-latest
 
-       steps:
-         - name: Checkout code
-           uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-         - name: Set up Node.js
-           uses: actions/setup-node@v2
-           with:
-             node-version: '20.11.1'  # Update to your Node.js version
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.11.1'  # Update to your Node.js version
 
-         - name: Install dependencies
-           run: npm install
+      - name: Install dependencies
+        run: npm install
 
-         - name: Build the app
-           run: npm run build
+      - name: Build the app
+        run: npm run build
 
-         - name: Create Linux Release
-           uses: softprops/action-gh-release@v1
-           with:
-             tag_name: ${{ github.ref }}
-             files: dist/**/*  # Adjust this if your output path is different
-           env:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Linux Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          files: dist/**/*  # Adjust this if your output path is different
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
