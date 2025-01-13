@@ -37,12 +37,6 @@
         "dmg"
       ],
       "icon": "build/icons/mac/icon.icns"
-    },
-    "linux": {
-      "target": [
-        "deb"
-      ],
-      "icon": "build/icon.png"
     }
   }
 }
