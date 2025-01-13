@@ -29,7 +29,7 @@ jobs:
         with:
           tag_name: v1.0.0-windows-${{ github.run_id }}  # Unique tag name
           name: Release v1.0.0 for Windows
-          files: dist/**/*  # Adjust this if your output path is different
+          files: dist/*.exe  # Only include .exe files directly in the dist directory
           token: ${{ secrets.GH_TOKEN }}
 
   build-macos:
@@ -55,7 +55,7 @@ jobs:
         with:
           tag_name: v1.0.0-macos-${{ github.run_id }}  # Unique tag name
           name: Release v1.0.0 for macOS
-          files: dist/**/*  # Adjust this if your output path is different
+          files: dist/*.dmg  # Only include .dmg files directly in the dist directory
           token: ${{ secrets.GH_TOKEN }}
 
   build-linux:
@@ -81,5 +81,5 @@ jobs:
         with:
           tag_name: v1.0.0-linux-${{ github.run_id }}  # Unique tag name
           name: Release v1.0.0 for Linux
-          files: dist/**/*  # Adjust this if your output path is different
+          files: dist/*.deb  # Only include .deb files directly in the dist directory
           token: ${{ secrets.GH_TOKEN }}

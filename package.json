@@ -43,11 +43,6 @@
         "deb"
       ],
       "icon": "build/icon.png"
-    },
-    "files": [
-      "dist/*.exe",
-      "dist/*.dmg",
-      "dist/*.deb"
-    ]
+    }
   }
 }
