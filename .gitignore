@@ -4,6 +4,9 @@ node_modules/
 # Build output
 dist/
 
+# Notes
+notes.txt
+
 # Logs
 *.log
 
