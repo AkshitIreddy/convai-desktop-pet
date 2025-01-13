@@ -42,7 +42,7 @@
       "target": [
         "deb"
       ],
-      "icon": "build/icon.png"
+      "icon": "build/icons/png/256x256.png"
     }
   }
 }
